@@ -2,7 +2,7 @@
 
 # Notely
 
-A note-taking REST API built in Go, created as part of the boot.dev CI/CD course. The main focus of this project was setting up a full CI/CD pipeline with GitHub Actions, automated testing, security scanning, and deployment to Google Cloud Platform.
+A note-taking REST API built in Go, created as part of the boot.dev CI/CD course. The main focus of this project was setting up a full CI/CD pipeline with GitHub Actions, automated testing, security scanning, and deployment to Google Cloud Run.
 
 ## CI/CD Pipeline
 
