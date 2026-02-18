@@ -1,27 +1,23 @@
 ![Tests](https://github.com/debobrad579/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
 
-# learn-cicd-starter (Notely)
+# Notely
 
-This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
+A note-taking REST API built in Go, created as part of the boot.dev CI/CD course. The main focus of this project was setting up a full CI/CD pipeline with GitHub Actions, automated testing, security scanning, and deployment to Google Cloud Platform.
 
-## Local Development
+## CI/CD Pipeline
 
-Make sure you're on Go version 1.22+.
+**CI** runs on every pull request to `main` and includes:
+- Unit tests with coverage (`go test -cover ./...`)
+- Security scanning via `gosec`
+- Format checking via `go fmt`
+- Linting via `staticcheck`
 
-Create a `.env` file in the root of the project with the following contents:
+**CD** runs on every push to `main` and:
+1. Builds the binary via `./scripts/buildprod.sh`
+2. Builds and pushes a Docker image to Google Artifact Registry
+3. Runs database migrations via `./scripts/migrateup.sh`
+4. Deploys to Google Cloud Run
 
-```bash
-PORT="8080"
-```
+## License
 
-Run the server:
-
-```bash
-go build -o notely && ./notely
-```
-
-*This starts the server in non-database mode.* It will serve a simple webpage at `http://localhost:8080`.
-
-You do *not* need to set up a database or any interactivity on the webpage yet. Instructions for that will come later in the course!
-
-Brady's version of Boot.dev's Notely app.
+This project is part of the boot.dev curriculum.

@@ -1,4 +1,4 @@
-module github.com/bootdotdev/learn-cicd-starter
+module github.com/debobrad579/notely
 
 go 1.22
 
